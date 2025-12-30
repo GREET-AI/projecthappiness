@@ -112,7 +112,7 @@ export function WheelOfHappiness({ onClose }: WheelOfHappinessProps) {
     };
 
     drawWheel();
-  }, []);
+  }, [centerX, centerY, radius]);
 
   // Check spin eligibility
   useEffect(() => {

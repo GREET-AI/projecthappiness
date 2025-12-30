@@ -38,15 +38,14 @@ function WheelModalButton() {
 }
 
 export function WheelModal() {
+  const { setOpen } = useModal();
+  
   return (
     <Modal>
       <WheelModalButton />
       <ModalBody className="max-w-6xl w-full max-h-[95vh] overflow-y-auto">
         <ModalContent>
-          <WheelOfHappiness onClose={() => {
-            const { setOpen } = useModal();
-            setOpen(false);
-          }} />
+          <WheelOfHappiness onClose={() => setOpen(false)} />
         </ModalContent>
       </ModalBody>
     </Modal>
