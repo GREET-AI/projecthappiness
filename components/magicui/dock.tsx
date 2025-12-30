@@ -15,7 +15,7 @@ export function Dock({
   return (
     <div
       className={cn(
-        "fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 gap-2 rounded-full border border-border bg-background/80 backdrop-blur-lg px-4 py-2 shadow-lg",
+        "fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 gap-2 rounded-full border border-border bg-background/80 backdrop-blur-lg px-4 py-2 shadow-lg",
         className
       )}
     >

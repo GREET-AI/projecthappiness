@@ -19,10 +19,11 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, FileText, Vote, TrendingUp, BarChart3, Video, Shield, ArrowRightIcon, BookOpen } from "lucide-react";
+import { ArrowRight, Sparkles, FileText, Vote, TrendingUp, BarChart3, Video, Shield, ArrowRightIcon, BookOpen, Gift, Coins, Shirt, Crown } from "lucide-react";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { GlareCard } from "@/components/ui/glare-card";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
+import { WheelModal } from "@/components/wheel-modal";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -293,8 +294,51 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Wheel of Happiness Section */}
+        <section className="mt-40 md:mt-48">
+          <div className="bg-gradient-to-br from-white via-amber-50 to-yellow-50 dark:from-orange-950 dark:via-orange-950 dark:to-amber-950 rounded-[48px] border border-orange-900/50 dark:border-orange-900/50 p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-orange-800 dark:text-orange-400 lowercase" style={{ fontFamily: '"Borel", cursive' }}>
+                  wheel of happiness
+                </h2>
+                <p className="text-lg text-black dark:text-white leading-relaxed">
+                  Spin the wheel and win amazing prizes! Get SOL, exclusive merchandise, VIP access to streams, or extra spins. 
+                  Free daily spin for everyone, plus bonus spins if you hold $HAPPINESS. Additional spins available for 0.1 SOL each.
+                </p>
+                <div className="pt-6">
+                  <WheelModal />
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <div className="bg-gradient-to-br from-orange-100 to-amber-100 dark:from-orange-950/30 dark:to-amber-950/30 rounded-xl p-8 border-2 border-orange-200 dark:border-amber-500/30">
+                  <div className="text-center mb-4">
+                    <Gift className="h-16 w-16 mx-auto mb-4 text-orange-600 dark:text-amber-400" />
+                    <p className="text-2xl font-bold text-orange-600 dark:text-amber-400 mb-2">Win Prizes Daily</p>
+                    <p className="text-sm text-muted-foreground">Free spin every day</p>
+                  </div>
+                  <div className="space-y-3 mt-6">
+                    <div className="flex items-center gap-3">
+                      <Coins className="h-5 w-5 text-orange-500" />
+                      <span className="text-sm font-semibold text-gray-800 dark:text-white">SOL Rewards</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Shirt className="h-5 w-5 text-amber-500" />
+                      <span className="text-sm font-semibold text-gray-800 dark:text-white">Merchandise</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Crown className="h-5 w-5 text-yellow-500" />
+                      <span className="text-sm font-semibold text-gray-800 dark:text-white">VIP Access</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Page Teasers Sections */}
-        <div className="mt-40 md:mt-48 space-y-16 md:space-y-24">
+        <div className="mt-16 md:mt-24 space-y-16 md:space-y-24">
           {/* How It Works Teaser */}
           <section className="relative">
             <GlareCard className="p-8 md:p-12">

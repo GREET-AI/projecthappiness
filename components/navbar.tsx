@@ -2,14 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FlyingLogosToggle } from "./magicui/flying-logos-toggle";
 import { ChristmasToggle } from "./magicui/christmas-toggle";
 import { useChristmas } from "@/lib/contexts/christmas-context";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { Notifications } from "./notifications";
 import { motion, AnimatePresence } from "framer-motion";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const navItems = [
   { href: "/", label: "home" },
@@ -21,15 +23,22 @@ const navItems = [
   { href: "/live", label: "live" },
   { href: "/transparency", label: "transparency" },
   { href: "/lore", label: "lore" },
+  { href: "/stats", label: "stats" },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const { isChristmasActive } = useChristmas();
 
+  // Client-side only mount check for WalletMultiButton
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/20 bg-transparent backdrop-blur-md">
+    <nav className="sticky top-0 z-[100] w-full border-b border-border/20 bg-transparent backdrop-blur-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Logo - größer */}
         <Link href="/" className="flex items-center">
@@ -50,7 +59,7 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-normal transition-colors hover:text-orange-600 dark:hover:text-orange-500 lowercase",
+                "text-sm font-normal transition-colors hover:text-orange-600 dark:hover:text-orange-500 lowercase relative z-[101] pointer-events-auto",
                 pathname === item.href
                   ? "text-orange-700 dark:text-orange-600 font-normal"
                   : "text-gray-900 dark:text-white"
@@ -62,8 +71,15 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Right Side - Buy Button, Theme Toggler & Mobile Menu Button */}
-        <div className="flex items-center gap-4">
+        {/* Right Side - Wallet, Buy Button, Theme Toggler & Mobile Menu Button */}
+        <div className="flex items-center gap-3 md:gap-4">
+          {/* Wallet Connect Button */}
+          {isMounted && (
+            <div className="hidden md:block">
+              <WalletMultiButton className="!bg-gradient-to-r !from-orange-400 !to-amber-500 hover:!from-orange-500 hover:!to-amber-600 !text-white !font-bold !rounded-xl !shadow-lg !text-sm !py-2 !px-4" />
+            </div>
+          )}
+          
           {/* Buy Button */}
           <Link
             href="https://pump.fun"
@@ -74,6 +90,7 @@ export function Navbar() {
             buy $happiness
           </Link>
           
+          <Notifications />
           <FlyingLogosToggle />
           <ChristmasToggle />
           
@@ -102,7 +119,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[90] bg-black/50 backdrop-blur-sm md:hidden"
             />
             
             {/* Mobile Menu */}
@@ -111,7 +128,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed left-0 top-20 z-50 h-[calc(100vh-5rem)] w-[280px] border-r border-border/20 bg-background/95 backdrop-blur-xl md:hidden"
+              className="fixed left-0 top-20 z-[100] h-[calc(100vh-5rem)] w-[280px] border-r border-border/20 bg-background/95 backdrop-blur-xl md:hidden"
             >
               <div className="flex flex-col p-6 gap-4">
                 {navItems.map((item) => (
@@ -120,7 +137,7 @@ export function Navbar() {
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
-                      "text-base font-normal py-2 px-4 rounded-lg transition-colors lowercase",
+                      "text-base font-normal py-2 px-4 rounded-lg transition-colors lowercase relative z-[101] pointer-events-auto",
                       pathname === item.href
                         ? "text-orange-700 dark:text-orange-600 font-normal bg-orange-500/20"
                         : "text-gray-800 dark:text-white hover:text-orange-600 dark:hover:text-orange-500 hover:bg-orange-500/10"
@@ -130,6 +147,13 @@ export function Navbar() {
                     {item.label}
                   </Link>
                 ))}
+                {/* Wallet Connect Button im Mobile Menu */}
+                {isMounted && (
+                  <div className="pt-4 border-t border-gray-200 dark:border-gray-800 mt-4">
+                    <WalletMultiButton className="!bg-gradient-to-r !from-orange-400 !to-amber-500 hover:!from-orange-500 hover:!to-amber-600 !text-white !font-bold !rounded-xl !shadow-lg !w-full !justify-center !text-sm !py-2" />
+                  </div>
+                )}
+                
                 {/* Buy Button im Mobile Menu */}
                 <Link
                   href="https://pump.fun"

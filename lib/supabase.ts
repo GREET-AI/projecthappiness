@@ -47,3 +47,44 @@ export interface DailyWinner {
   tx_hash: string;
 }
 
+export interface WheelSpin {
+  id: string;
+  wallet_address: string;
+  spin_date: string;
+  prize_type: 'sol' | 'merchandise' | 'vip-access' | 'extra-spin' | 'nothing';
+  prize_value: number;
+  is_paid: boolean;
+  created_at: string;
+}
+
+export interface WheelPrize {
+  id: string;
+  prize_type: 'sol' | 'merchandise' | 'vip-access' | 'extra-spin' | 'nothing';
+  prize_label: string;
+  prize_value: number;
+  probability: number;
+  color: string;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Referral {
+  id: string;
+  referrer_wallet: string;
+  referee_wallet: string;
+  referral_code: string;
+  reward_claimed: boolean;
+  created_at: string;
+}
+
+export interface ReferralReward {
+  id: string;
+  referral_id: string;
+  wallet_address: string;
+  reward_type: 'extra-spin' | 'happiness-tokens' | 'sol';
+  reward_value: number;
+  claimed: boolean;
+  created_at: string;
+}
+

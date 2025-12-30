@@ -83,7 +83,7 @@ export function FlyingLogosToggle() {
               left: 0,
               width: '100vw',
               height: '100vh',
-              zIndex: 9998,
+              zIndex: 90,
               pointerEvents: 'none',
               mixBlendMode: 'screen',
             }}
@@ -113,7 +113,7 @@ export function FlyingLogosToggle() {
               left: 0,
               width: '100vw',
               height: '100vh',
-              zIndex: 9998,
+              zIndex: 90,
               pointerEvents: 'none',
               mixBlendMode: 'screen',
             }}
@@ -143,7 +143,7 @@ export function FlyingLogosToggle() {
               left: 0,
               width: '100vw',
               height: '100vh',
-              zIndex: 9998,
+              zIndex: 90,
               pointerEvents: 'none',
               mixBlendMode: 'screen',
             }}
@@ -153,7 +153,7 @@ export function FlyingLogosToggle() {
 
       {/* React Confetti für Feuerwerk-Effekt */}
       {isActive && width && height && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 10000, pointerEvents: 'none' }}>
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 90, pointerEvents: 'none' }}>
           <Confetti
             width={width}
             height={height}
@@ -173,7 +173,7 @@ export function FlyingLogosToggle() {
         <div 
           className="flying-logos" 
           style={{ 
-            zIndex: 10001,
+            zIndex: 90,
             position: 'fixed',
             top: 0,
             left: 0,
@@ -189,7 +189,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo left-to-right-1"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -198,7 +198,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo left-to-right-2"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -207,7 +207,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo left-to-right-3"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
 
@@ -218,7 +218,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo right-to-left-1"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -227,7 +227,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo right-to-left-2"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -236,7 +236,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo right-to-left-3"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
 
@@ -247,7 +247,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo snow-fall-1"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -256,7 +256,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo snow-fall-2"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -265,7 +265,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo snow-fall-3"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
 
@@ -276,7 +276,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo bubble-up-1"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -285,7 +285,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo bubble-up-2"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
 
@@ -296,7 +296,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo diagonal-1"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -305,7 +305,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo diagonal-2"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -314,7 +314,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo diagonal-3"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
 
@@ -325,7 +325,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo random-1"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
           <Image
@@ -334,7 +334,7 @@ export function FlyingLogosToggle() {
             width={60}
             height={60}
             className="flying-logo random-2"
-            style={{ zIndex: 10001 }}
+            style={{ zIndex: 90, pointerEvents: 'none' }}
             unoptimized
           />
         </div>

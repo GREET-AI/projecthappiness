@@ -8,6 +8,7 @@ import { SolanaWalletProvider } from "@/components/wallet-provider";
 import { ReCaptchaProvider } from "@/components/recaptcha-provider";
 import { Navbar } from "@/components/navbar";
 import { Dock, DockIcon } from "@/components/magicui/dock";
+import { CommunityChat } from "@/components/community-chat";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,7 @@ export default function RootLayout({
                 <ChristmasProvider>
                   <Navbar />
                   <main className="min-h-screen">{children}</main>
+                  <CommunityChat />
                   <Dock>
                     <DockIcon 
                       id="dock-x-main"
