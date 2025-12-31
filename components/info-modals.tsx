@@ -39,10 +39,10 @@ export function AboutModal() {
           <Heart className="h-6 w-6" />
         </div>
       </ModalTrigger>
-      <ModalBody>
+      <ModalBody className="max-w-2xl w-full mx-auto">
         <ModalContent>
           <CardContainer containerClassName="py-0" className="w-full">
-            <CardBody className="bg-gray-50 dark:bg-black relative group/card dark:hover:shadow-2xl dark:hover:shadow-orange-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+            <CardBody className="bg-gray-50 dark:bg-black relative group/card dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
@@ -121,10 +121,10 @@ export function HowItWorksModal() {
           <Sparkles className="h-6 w-6" />
         </div>
       </ModalTrigger>
-      <ModalBody>
+      <ModalBody className="max-w-2xl w-full mx-auto">
         <ModalContent>
           <CardContainer containerClassName="py-0" className="w-full">
-            <CardBody className="bg-gray-50 dark:bg-black relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+            <CardBody className="bg-gray-50 dark:bg-black relative group/card dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white"
@@ -223,10 +223,10 @@ export function HowToBuyModal() {
           <Coins className="h-6 w-6" />
         </div>
       </ModalTrigger>
-      <ModalBody>
+      <ModalBody className="max-w-2xl w-full mx-auto">
         <ModalContent>
           <CardContainer containerClassName="py-0" className="w-full">
-            <CardBody className="bg-gray-50 dark:bg-black relative group/card dark:hover:shadow-2xl dark:hover:shadow-orange-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+            <CardBody className="bg-gray-50 dark:bg-black relative group/card dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white"
